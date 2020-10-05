@@ -19,5 +19,5 @@ jobs:
       - name: Publish distribution
         uses: pypa/gh-action-pypi-publish@master
         with:
-          packages_dir: python/
+          packages_dir: python/dist/
           password: ${{ secrets.AZURE_HELPERS_PYPI_TOKEN }} 
