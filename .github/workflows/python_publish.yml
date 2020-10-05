@@ -15,5 +15,5 @@ jobs:
         with:
           python-version: 3.7
       - name: Build dist
-        run: python setup.py sdist
+        run: cd python && python setup.py sdist
  
