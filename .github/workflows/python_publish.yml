@@ -16,4 +16,7 @@ jobs:
           python-version: 3.7
       - name: Build dist
         run: cd python && python setup.py sdist
- 
+      - name: Publish distribution
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.AZURE_HELPERS_PYPI_TOKEN }} 
