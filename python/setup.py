@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -9,6 +9,8 @@ setup(
     author='AirWalk Consulting',
     author_email='info@airwalkconsulting.com',
     license='MIT',
-    packages=['azurefunctionhelpers'],
+    # packages=['azurefunctionhelpers.logging'],
+    packages = find_packages(where='azurefunctionhelpers'),
     install_requires=['elastic-apm==5.9.0']
 )
+
