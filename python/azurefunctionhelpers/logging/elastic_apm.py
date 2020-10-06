@@ -17,7 +17,7 @@ def log(tran_category: str, tran_name: str, ok_status: str = 'ok', error_status:
 
     def decorator(func):
         @functools.wraps(func)
-        def wrapper(req):
+        def wrapper(*args, **kwargs):
             try:
                 instrument()
                 client = Client()
@@ -26,7 +26,7 @@ def log(tran_category: str, tran_name: str, ok_status: str = 'ok', error_status:
                 logger.addHandler(handler)
                 client.begin_transaction(tran_category)
 
-                result = func(req)
+                result = func(*args, **kwargs)
 
                 client.end_transaction(tran_name, ok_status)
 
