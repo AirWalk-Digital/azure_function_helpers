@@ -4,7 +4,7 @@ from elasticapm import Client, instrument
 from elasticapm.handlers.logging import LoggingHandler
 
 
-def log(tran_category: str, tran_name: str, ok_status: str = 'ok', error_status: str = 'error') -> callable:
+def log(tran_category: str, tran_name: str = 'None', ok_status: str = 'ok', error_status: str = 'error') -> callable:
     """
     For use as a decorator to wrap Azure function calls. Log APM and logging information to Elasticsearch.
     :param str tran_category: Category to log the transaction as
@@ -40,7 +40,8 @@ def log(tran_category: str, tran_name: str, ok_status: str = 'ok', error_status:
         return wrapper
     return decorator
 
-def log_async(tran_category: str, tran_name: str, ok_status: str = 'ok', error_status: str = 'error') -> callable:
+
+def log_async(tran_category: str, tran_name: str = 'None', ok_status: str = 'ok', error_status: str = 'error') -> callable:
     """
     For use as a decorator to wrap asynchronous Azure function calls. Log APM and logging information to Elasticsearch.
     :param str tran_category: Category to log the transaction as
