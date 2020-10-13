@@ -11,7 +11,7 @@ Wrapper for logging handler and event tracing
 Requires the setting of the environment variable ```OBSERVABILITY_SCHEME``` 
 
 
-Currently only logging to elastic apm is supported which will require the additional environment variables
+Currently only logging with the variable setting ```elastic_apm``` is supported which will require the additional environment variables
 ```ELASTIC_APM_SERVICE_NAME``` and ```ELASTIC_APM_SERVER_URL```
 as defined in APM documentation https://www.elastic.co/guide/en/apm/agent/python/current/api.html
 
