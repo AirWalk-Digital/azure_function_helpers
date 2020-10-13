@@ -1,1 +1,1 @@
-from .generic import log
+from .generic import log, log_async
